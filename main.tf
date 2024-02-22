@@ -24,3 +24,12 @@ resource "aws_vpc" "test" {
     aws_vpc_ipam_pool_cidr.test
   ]
 }
+
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
